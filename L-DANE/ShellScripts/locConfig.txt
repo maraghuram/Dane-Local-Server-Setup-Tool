@@ -1,0 +1,4 @@
+$TTL 86400
+loc.                    86400   IN      SOA     a.myroot-servers.loc. (
+                                                hostmaster 1 1d 2h 41d 1h )
+loc.                    86400   IN      NS      a.myroot-servers.loc.

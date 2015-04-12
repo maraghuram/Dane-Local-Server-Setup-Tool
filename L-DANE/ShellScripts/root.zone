@@ -1,0 +1,4 @@
+.                       86400   IN      SOA     a.myroot-servers.loc. hostmaster.loc. 2013122200 1800 900 604800 86400
+.                       518400  IN      NS      a.myroot-servers.loc.
+loc.                    86400   IN      NS      a.myroot-servers.loc.
+Enter domain name here            86400    IN      NS        example : 192.168.173.10

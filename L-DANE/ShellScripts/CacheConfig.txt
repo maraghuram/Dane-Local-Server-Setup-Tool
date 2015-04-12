@@ -1,0 +1,32 @@
+options {
+	//directory "/var/named";
+        allow-recursion { myclients; };
+        dnssec-enable yes;
+        dnssec-validation yes;
+        dnssec-lookaside auto;
+};
+
+logging {
+    channel syslog { syslog daemon; severity info; };
+    channel security { file "security.log" versions 10 size 50M; print-time yes; };
+    channel query_log {
+      file "query.log" versions 10 size 50M; severity debug; print-time yes;
+    };
+    category general       { syslog; };
+    category security      { security; };
+    category queries       { query_log; };
+    category dnssec        { security; };
+    category default       { syslog; };
+    category resolver      { syslog; };
+    category client        { syslog; };
+    category query-errors  { query_log; };
+    category edns-disabled { syslog; };
+};
+
+zone "." {
+        type hint;
+        file "root.hint";
+};
+
+managed-keys {
+
